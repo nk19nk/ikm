@@ -20,11 +20,17 @@ import java.util.Optional;
 
 @Controller
 @RequiredArgsConstructor
+@RequestMapping("/menu") // Добавляем базовый путь
 public class MenuController {
 
     private final MenuRepository menuRepository;
 
     private final ObjectMapper objectMapper;
+
+    @GetMapping
+    public String menuPage() {
+        return "menu.html"; // Возвращаем страницу HTML
+    }
 
     @GetMapping
     public PagedModel<Menu> getAll(Pageable pageable) {

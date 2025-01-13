@@ -20,11 +20,17 @@ import java.util.Optional;
 
 @Controller
 @RequiredArgsConstructor
+@RequestMapping("/order")
 public class OrderController {
 
     private final OrderRepository orderRepository;
 
     private final ObjectMapper objectMapper;
+
+    @GetMapping
+    public String orderPage() {
+        return "order.html";
+    }
 
     @GetMapping
     public PagedModel<Order> getAll(Pageable pageable) {

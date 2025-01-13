@@ -14,7 +14,7 @@ import java.math.BigDecimal;
 @Table(name = "menu")
 public class Menu {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //Генерация ID автоматически
     @Column(name = "id", nullable = false)
     private Integer id;
 
